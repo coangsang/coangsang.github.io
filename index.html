@@ -1,92 +1,199 @@
+<!--doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio cua Quang Sang Pham - developer tai Ho Chi Minh City."
+    />
+    <title>Quang Sang Pham | Portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coangsang's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+
+  <!-- Bắt buộc để hiển thị đúng trên mobile -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>Who is Coangsang?</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELSH@100..900,2&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: #000;
+      color-scheme: dark;
+    }
+
+    body {
+      min-height: 100svh;
+      margin: 0;
+
+      padding-top: max(1.25rem, env(safe-area-inset-top));
+      padding-right: max(1.25rem, env(safe-area-inset-right));
+      padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+      padding-left: max(1.25rem, env(safe-area-inset-left));
+
+      background: #000;
+      color: #d0f5d0;
+
+      font-family: "Handjet", monospace;
+      font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+      line-height: 1.35;
+
+      text-shadow: 0 0 2px #00ff00;
+      filter: contrast(1.2) saturate(1.3);
+
+      overflow-x: hidden;
+    }
+
+    main {
+      width: min(100%, 48rem);
+      margin-inline: auto;
+    }
+
+    p {
+      margin: 0 0 0.75rem;
+      overflow-wrap: anywhere;
+    }
+
+    a {
+      color: #32cd32;
+      text-shadow: none;
+      text-underline-offset: 0.15em;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: #7cff7c;
+    }
+
+    .crt-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.15) 0,
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 2px,
+        transparent 3px
+      );
+
+      box-shadow: inset 0 0 clamp(40px, 15vw, 100px)
+        rgba(0, 0, 0, 0.5);
+    }
+
+    .crt-overlay::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.03);
+      animation: flicker 0.15s infinite;
+    }
+
+    @keyframes flicker {
+      0%,
+      19%,
+      21%,
+      23%,
+      25%,
+      54%,
+      56%,
+      100% {
+        opacity: 0.02;
+      }
+
+      20%,
+      24%,
+      55% {
+        opacity: 0.05;
+      }
+    }
+
+    /* Giảm hiệu ứng cho người dùng tắt animation */
+    @media (prefers-reduced-motion: reduce) {
+      .crt-overlay::after {
+        animation: none;
+      }
+    }
+
+    /* Tối ưu màn hình rất nhỏ */
+    @media (max-width: 360px) {
+      body {
+        padding-inline: 1rem;
+        font-size: 1.1rem;
+      }
+
+      p {
+        margin-bottom: 0.6rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <main>
+    <p>*full name Quang Sang Pham</p>
+    <p>*dob 19/06/2006</p>
+    <p>*hometown Huong Son, Ha Tinh</p>
+    <p>*current location Ho Chi Minh City</p>
 
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">CS<span>.</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <p>
+      *email
+      <a href="mailto:coangsang19@gmail.com">
+        coangsang19@gmail.com
+      </a>
+    </p>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Quang Sang</span></h1>
-            <p>Software Engineer</p>
-            <a href="#projects" class="btn">View My Work</a>
-        </div>
-    </header>
+<p>
+  *facebook
+  <a href="https://fb.com/coangsang" target = _blank>
+    <ruby>
+      <rb>fb.com/coangsang</rb>
+      <rt>@coangsang</rt>
+    </ruby>
+  </a>
+</p>
 
-    <main class="container">
-        <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
-            <p>
-                I'm a student at VNUHCM - University of Science.
-            </p>
-        </section>
+<p>
+  *instagram
+  <a href="https://instagram.com/coang.sang"target = _blank>
+    <ruby>
+      <rb>instagram.com/coang.sang</rb>
+      <rt>@coang.sang</rt>
+    </ruby>
+  </a>
+</p>
 
-        <section id="skills" class="section">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-tag">C# / Unity</div>
-                <div class="skill-tag">Python</div>
-                <div class="skill-tag">C++</div>
-                <div class="skill-tag">JavaScript / Extensions</div>
-            </div>
-        </section>
+    <p>*hobbies reading books, walking, doing nothing (literally)</p>
+  </main>
 
-        <section id="projects" class="section">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="project-grid">
-                
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Inventory Rampager</h3>
-                        <p>A specialized tool currently in release, designed to manage and optimize complex item systems.</p>
-                        <div class="tags">
-                            <span>C#</span>
-                            <span>Game Tool</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>HCMUS GPA Calculator</h3>
-                        <p>A Chrome extension helping students at HCMUS calculate their cumulative GPA instantly from the student portal.</p>
-                        <div class="tags">
-                            <span>JavaScript</span>
-                            <span>Web Extension</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="contact" class="section contact">
-            <h2 class="section-title">Get In Touch</h2>
-            <p>I'm always open to discussing new projects or creative opportunities.</p>
-            <a href="coangsang19@gmail.com" class="email-link">coangsang19@gmail.com</a>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Coangsang. Made with ☕.</p>
-    </footer>
-
+  <div class="crt-overlay" aria-hidden="true"></div>
 </body>
 </html>
